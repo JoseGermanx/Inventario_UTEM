@@ -1,6 +1,6 @@
 
 export const variables = {
-    urlBaseBack: 'http://localhost:8080/api',
-    urlReportePdf: "http://localhost:8080/api/informe/generar-reporte-general-pdf",
-    urlReporteExcel: "http://localhost:8080/api/informe/generar-reporte-general-xls",
+    urlBaseBack: process.env.REACT_APP_URL_BACKEND,
+    urlReportePdf: `${process.env.REACT_APP_URL_BACKEND}/informe/generar-reporte-general-pdf`,
+    urlReporteExcel: `${process.env.REACT_APP_URL_BACKEND}/informe/generar-reporte-general-xls`,
 }
