@@ -1,15 +1,7 @@
 const express = require("express");
 const morgan = require("morgan");
-const port = process.env.PORT;
 const app = express();
 const router = require("../routes/router")
-
-app.use(morgan("dev"));
-app.use(express.json());
-app.use(express.urlencoded({ extended: true }));
-
-app.use("/api", router);
-
 
 // Configuración CORS
 
@@ -27,6 +19,15 @@ app.use((req, res, next) => {
   res.setHeader('Access-Control-Allow-Credentials', true);
   next();
 });
+
+
+app.use(morgan("dev"));
+app.use(express.json());
+app.use(express.urlencoded({ extended: true }));
+
+app.use("/api", router);
+
+
 
 
 module.exports = app;
